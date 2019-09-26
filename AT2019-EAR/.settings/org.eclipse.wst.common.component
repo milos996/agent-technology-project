@@ -3,11 +3,11 @@
     <wb-module deploy-name="AT2019-EAR">
                 
         <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
-        <dependent-module archiveName="AT2019.war" deploy-path="/" handle="module:/resource/AT2019/AT2019">
+        <dependent-module archiveName="AT2019-JAR.jar" deploy-path="/" handle="module:/resource/AT2019-JAR/AT2019-JAR">
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="AT2019-JAR.jar" deploy-path="/" handle="module:/resource/AT2019-JAR/AT2019-JAR">
+        <dependent-module archiveName="AT2019.war" deploy-path="/" handle="module:/resource/AT2019/AT2019">
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>

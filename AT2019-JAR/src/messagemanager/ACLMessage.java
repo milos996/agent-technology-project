@@ -24,7 +24,7 @@ public class ACLMessage implements Serializable {
 
 	public String content;
 
-	public Serializable contentObj;
+	public Object contentObj;
 
 	public Map<String, Serializable> userArgs;
 	

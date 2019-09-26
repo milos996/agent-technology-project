@@ -26,12 +26,12 @@ public class AgentManager implements AgentManagerInterface {
 			stopAgent(aid);
 		}
 		
-		AgentInterface agent = null;
+		Agent agent = null;
 		
 		try {
-			agent =  ObjectFactory.lookup(getAgentLookup(aid, true), AgentInterface.class);
+			agent =  ObjectFactory.lookup(getAgentLookup(aid, true), Agent.class);
 		} catch (IllegalStateException ex) {
-			agent =  ObjectFactory.lookup(getAgentLookup(aid, false), AgentInterface.class);
+			agent =  ObjectFactory.lookup(getAgentLookup(aid, false), Agent.class);
 		}
 		
 		initAgent(agent, aid);
@@ -50,10 +50,10 @@ public class AgentManager implements AgentManagerInterface {
 	}
 	
 	@Override
-	public AgentInterface getAgentReference(AID aid) {
+	public Agent getAgentReference(AID aid) {
 		for (AID item : getCache().keySet()) {
 			if (item.getName().equals(aid.getName())) {
-				return getCache().get(item);
+				return (Agent) getCache().get(item);
 			}
 		}
 		
@@ -98,17 +98,19 @@ public class AgentManager implements AgentManagerInterface {
 	}	
 	
 	private String getAgentLookup(AID aid, boolean stateful) {
-		if (stateful) {
-			return String.format("ejb:/%s//%s!%s?stateful", aid.getType().getModule(),
-					aid.getType().getName(), AgentInterface.class.getName());
-		}
+		return "java:module/" + aid.getType().getModule() + "!agents." + aid.getType().getModule();
 		
-		return String.format("ejb:/%s//%s!%s", aid.getType().getModule(),
-				aid.getType().getName(), AgentInterface.class.getName());
+//		if (stateful) {
+//			return String.format("ejb:/%s//%s!%s?stateful", aid.getType().getModule(),
+//					aid.getType().getName(), AgentInterface.class.getName());
+//		}
+//		
+//		return String.format("ejb:/%s//%s!%s", aid.getType().getModule(),
+//				aid.getType().getName(), AgentInterface.class.getName());
 	}
 	 
 	private void initAgent(AgentInterface agent, AID aid) {
-		getCache().put(aid, agent);
-//		agent.init(aid);
+		agent.init(aid);
+		getCache().put(aid, agent);	
 	}
 }

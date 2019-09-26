@@ -12,6 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import agentmanager.AID;
+import agentmanager.Agent;
 import agentmanager.AgentManager;
 import messagemanager.ACLMessage;
 import messagemanager.MessageManager;
@@ -52,7 +53,8 @@ public class RestAt2019Impl implements RestAt2019 {
 
 	@Override
 	public void sendMessage(ACLMessage aclMessage) {
-		msm.post(aclMessage);
+		Agent agent = (Agent) agm.getAgentReference(aclMessage.sender);
+		agent.handleMessage(aclMessage);
 	}
 
 	@Override

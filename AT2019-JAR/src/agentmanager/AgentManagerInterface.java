@@ -13,5 +13,5 @@ public interface AgentManagerInterface extends Serializable {
 	
 	public List<String> getAgentTypes();
 	
-	public AgentInterface getAgentReference(AID aid);
+	public Agent getAgentReference(AID aid);
 }

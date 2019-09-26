@@ -13,7 +13,6 @@ import agentmanager.Agent;
 import agentmanager.AgentInterface;
 import agentmanager.AgentManager;
 
-
 @MessageDriven(activationConfig = {
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
 		@ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/queue/at_queue")
@@ -21,7 +20,7 @@ import agentmanager.AgentManager;
 public class MDBConsumer implements MessageListener {
 	@EJB
 	private AgentManager agm;
-
+	
 	@Override
 	public void onMessage(Message msg) {
 		try {
@@ -43,8 +42,8 @@ public class MDBConsumer implements MessageListener {
 	}
 
 	private void sendToAgent(ACLMessage msg, AID aid) {
-//		AgentInterface agent =  agm.getAgentReference(aid);
-		Agent agent = null;
+		Agent agent =  agm.getAgentReference(aid);
+		
 		if (agent != null) {
 			agent.handleMessage(msg);
 		} else {

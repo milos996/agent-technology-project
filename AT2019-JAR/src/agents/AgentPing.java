@@ -15,27 +15,29 @@ import messagemanager.Performative;
 public class AgentPing extends Agent {
 	
 	private static final long serialVersionUID = 1L;
-//
-//	@EJB
-//	WebSocketClient webSocketClient;
+
+	//  @EJB
+	//	WebSocketClient webSocketClient;
 	
 	@Override
 	public void handleMessage(ACLMessage aclMessage) {
 		if (aclMessage.performative == Performative.REQUEST) { 
+			// webSocketClient.sendMessageToClient("Send REQUEST performative from agent " + aclMessage.sender.getName() + "to" + aclMessage.reciever.getName());
 			messageManager().post(aclMessage);
 			return;
 		} 
 		
 		if (aclMessage.performative == Performative.INFORM) {
 			System.out.println(aclMessage.content);
+			// webSocketClient.sendMessageToClient("Get INFROM performative from agent " + aclMessage.sender.getName() + "in" + aclMessage.reciever.getName());
 			return;
 		}
 	}
 
 	@Override
 	public void init(AID aid) {
-		System.out.println("Tu sam");
-//		webSocketClient.sendMessageToClient("Kreirao se agent");
+		this.myAid = aid;
+//		webSocketClient.sendMessageToClient("Kreirao se agent" + aid.getName());
 	}
 	
 	

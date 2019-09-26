@@ -19,5 +19,6 @@
 	<classpathentry kind="lib" path="C:/Users/nbuba/Documents/jackson-annotations-2.1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/nbuba/Documents/org.springframework.context-3.0.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/nbuba/Documents/lombok.jar"/>
+	<classpathentry kind="lib" path="/siebog-jar/lib/jboss-client.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

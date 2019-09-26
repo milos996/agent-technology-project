@@ -78,7 +78,8 @@ function App() {
       console.log("WebSocket Client Connected");
     };
     client.onmessage = message => {
-      setLogs(currState => [message, ...currState]);
+      console.log(message);
+      setLogs(currState => [message.data, ...currState]);
     };
     client.onerror = err => {
       console.log(err);

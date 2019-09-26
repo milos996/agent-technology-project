@@ -104,6 +104,7 @@ public class MessageManager implements MessageManagerInterface {
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 	private void createConnection() {

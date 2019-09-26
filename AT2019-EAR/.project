@@ -3,8 +3,8 @@
 	<name>AT2019-EAR</name>
 	<comment></comment>
 	<projects>
-		<project>AT2019</project>
 		<project>AT2019-JAR</project>
+		<project>AT2019</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

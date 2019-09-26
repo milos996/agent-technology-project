@@ -1,4 +1,6 @@
-/agentmanager/
-/rest/
-/connectionmanager/
+/META-INF/
+/agents/
 /messagemanager/
+/rest/
+/util/
+/agentmanager/
