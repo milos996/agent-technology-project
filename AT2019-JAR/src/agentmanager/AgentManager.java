@@ -99,14 +99,6 @@ public class AgentManager implements AgentManagerInterface {
 	
 	private String getAgentLookup(AID aid, boolean stateful) {
 		return "java:module/" + aid.getType().getModule() + "!agents." + aid.getType().getModule();
-		
-//		if (stateful) {
-//			return String.format("ejb:/%s//%s!%s?stateful", aid.getType().getModule(),
-//					aid.getType().getName(), AgentInterface.class.getName());
-//		}
-//		
-//		return String.format("ejb:/%s//%s!%s", aid.getType().getModule(),
-//				aid.getType().getName(), AgentInterface.class.getName());
 	}
 	 
 	private void initAgent(AgentInterface agent, AID aid) {

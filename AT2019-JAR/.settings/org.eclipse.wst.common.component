@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="AT2019-JAR">
         <wb-resource deploy-path="/" source-path="/src" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/" source-path="/app"/>
         <property name="java-output-path" value="/AT2019-JAR/build/classes"/>
         <property name="ClientProject" value="AT2019-JARClient"/>
         <property name="ClientJARURI" value="AT2019-JARClient.jar"/>

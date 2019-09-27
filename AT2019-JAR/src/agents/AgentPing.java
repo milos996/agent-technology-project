@@ -11,13 +11,15 @@ import agentmanager.AgentInterface;
 import messagemanager.ACLMessage;
 import messagemanager.Performative;
 
+
+
 @Stateful
 public class AgentPing extends Agent {
 	
 	private static final long serialVersionUID = 1L;
 
-	//  @EJB
-	//	WebSocketClient webSocketClient;
+//	  @EJB(mappedName = "java:global/AT2019-EAR/AT2019/WebSocketClient")
+//	  WebSocketClient webSocketClient;
 	
 	@Override
 	public void handleMessage(ACLMessage aclMessage) {

@@ -11,6 +11,7 @@ public class AgentPong extends Agent {
 
 	private static final long serialVersionUID = -8913458083105208623L;
 	
+	private int count = 0;
 	//  @EJB
 	//	WebSocketClient webSocketClient;
 	
@@ -18,6 +19,7 @@ public class AgentPong extends Agent {
 	@Override
 	public void handleMessage(ACLMessage aclMessage) {
 		if (aclMessage.performative == Performative.REQUEST) {
+			count = count + 1;
 			// webSocketClient.sendMessageToClient("GET REQUEST performative from agent " + aclMessage.sender.getName() + "in" + aclMessage.reciever.getName());
 			ACLMessage responseMessage = new ACLMessage(Performative.INFORM);
 			responseMessage.reciever = aclMessage.sender;

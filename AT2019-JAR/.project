@@ -39,4 +39,11 @@
 		<nature>org.jboss.tools.jst.web.kb.kbnature</nature>
 		<nature>org.jboss.tools.cdi.core.cdinature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>app</name>
+			<type>2</type>
+			<location>C:/Users/nbuba/Documents/repos/agent-technology-project/AT2019/src/app</location>
+		</link>
+	</linkedResources>
 </projectDescription>
